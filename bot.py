@@ -43,7 +43,7 @@ async def load_extensions():
 async def main():
     async with client:
         await load_extensions()
-        await client.start('MTA4MDM1OTE1NTc0OTExMzkxNg.G3ehv-.QCeHqCGHOadaM-CrFCQvc7BkQV-dAUMU8FB63w')
+        await client.start('Insert secret here')
 
 asyncio.run(main())
 
