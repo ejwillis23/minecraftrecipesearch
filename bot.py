@@ -46,5 +46,3 @@ async def main():
         await client.start('Insert secret here')
 
 asyncio.run(main())
-
-# client.run('MTA4MDM1OTE1NTc0OTExMzkxNg.G3ehv-.QCeHqCGHOadaM-CrFCQvc7BkQV-dAUMU8FB63w')
