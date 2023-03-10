@@ -1,4 +1,5 @@
 import json
+import os
 import discord
 from discord.ext import commands
 from collections import Counter
@@ -21,9 +22,23 @@ class Recipe(commands.Cog):
     async def recipe(self, ctx, *, input):
         input = input.lower()
         item_clean = input.replace(" ", "_")
-        filename = "minecraft-data\\recipes\\" + item_clean + ".json"
 
-        file = open(filename, "r")
+        try:
+            filename = "minecraft-data\\recipes\\" + item_clean + ".json"
+            file = open(filename, "r")
+        except:
+            path = "C:/Users/elija/OneDrive/Documents/myProject/minecraft-data/recipes/"
+            dir_list = os.listdir(path)
+            for fname in dir_list:
+                if item_clean in fname:
+                    filename = "minecraft-data\\recipes\\" + fname
+                    print(filename)
+                    file = open(filename, "r")
+                    break
+                else:
+                    await ctx.send("Recipe not found!")
+                    return
+
         data = json.load(file)
 
         count = Counter()

@@ -1,2 +1,3 @@
 venv/
-/cogs/pycache/
+cogs/__pycache__/
+bot.py
